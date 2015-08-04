@@ -9,6 +9,7 @@ Pokedex.Routers.Router = Backbone.Router.extend({
     this._pokemonIndex = new Pokedex.Views.PokemonIndex();
     this._pokemonIndex.refreshPokemon(callback);
     $('#pokedex .pokemon-list').html(this._pokemonIndex.$el);
+    this.pokemonForm();
   },
 
   pokemonDetail: function (id, callback) {
@@ -43,6 +44,6 @@ Pokedex.Routers.Router = Backbone.Router.extend({
       collection: this._pokemonIndex.collection,
     });
     formView.render();
-    $('pokedex .pokemon-form').html(formView.$el);
+    $('#pokedex .pokemon-form').html(formView.$el);
   },
 });

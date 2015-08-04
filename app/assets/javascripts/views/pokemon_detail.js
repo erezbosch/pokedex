@@ -11,10 +11,10 @@ Pokedex.Views.PokemonDetail = Backbone.View.extend({
 
   render: function () {
     this.$el.html(this.template({ pokemon: this.model }));
-
     this.model.toys().each(function (toy) {
       this.$('ul.toys').append(JST['toyListItem']({ toy: toy }));
     }.bind(this));
+    return this;
   },
 
   selectToyFromList: function (e) {
