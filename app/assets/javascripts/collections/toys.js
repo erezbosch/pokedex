@@ -1,3 +1,4 @@
 Pokedex.Collections.Toys = Backbone.Collection.extend({
-  model: Pokedex.Models.Toy
+  model: Pokedex.Models.Toy,
+  url: '/toys'
 });
