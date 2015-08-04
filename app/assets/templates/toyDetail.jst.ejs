@@ -3,4 +3,21 @@
   <% ["Name", "Happiness", "Price"].forEach(function(attr) { %>
     <p><%= attr + ": " + toy.escape(attr.toLowerCase()) %></p>
   <% }) %>
+
+  <label for="reassign">Reassign</label>
+  <% var owner = pokes.get(toy.get("pokemon_id")); %>
+  <select class="reassign"
+          id="reassign"
+          data-pokemon-id=<%= toy.escape('pokemon_id') %>
+          data-toy-id=<%= toy.escape('id') %>>
+    <% pokes.each(function (poke) { %>
+      <option value=<%= poke.get('id') %>
+        <% if (poke.escape('id') === owner.escape('id')) { %>
+          selected
+        <% } %>
+        >
+        <%= poke.escape('name') %>
+      </option>
+    <% }) %>
+  </select>
 </div>

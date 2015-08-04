@@ -79,8 +79,8 @@ Pokedex.Views.Pokemon = Backbone.View.extend({
   },
 
   renderToyDetail: function (toy) {
-    debugger;
-    this.$toyDetail.html(JST["toyDetail"]({ toy: toy }));
+    var detail = JST["toyDetail"]({ toy: toy, pokes: this.pokes });
+    this.$toyDetail.html(detail);
   },
 
   selectToyFromList: function (event) {
