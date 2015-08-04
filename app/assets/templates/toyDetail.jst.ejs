@@ -1,0 +1,6 @@
+<div class="detail">
+  <img src= <%= toy.escape('image_url') %>><br>
+  <% ["Name", "Happiness", "Price"].forEach(function(attr) { %>
+    <p><%= attr + ": " + toy.escape(attr.toLowerCase()) %></p>
+  <% }) %>
+</div>
