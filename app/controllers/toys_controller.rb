@@ -1,18 +1,13 @@
 class ToysController < ApplicationController
   def update
     @toy = Toy.find(params[:id])
-    if @toy.update(toy_params)
+    @toy.update(toy_params)
+    if @toy.save
       render :show
     else
       render json: @toy.errors.full_messages, status: 422
     end
   end
-
-  def show
-    @toy = Toy.find(params[:id])
-    render :show
-  end
-
   private
 
   def toy_params
